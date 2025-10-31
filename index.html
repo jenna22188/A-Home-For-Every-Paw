@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>A HOME FOR EVERY PAW</title>
+
+  <!-- Zoomora CSS installation -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zoomora/dist/zoomora.css">
+
+  <!-- Custom fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&family=Shippori+Mincho:wght@800&display=swap" rel="stylesheet">
+
+  <!-- Dog logo shows up on the tab -->
+  <link rel="icon" href="images/dog-logo.png"> 
+
+  <!-- Icons Script -->
+  <script src="https://kit.fontawesome.com/86fa8ddc20.js" crossorigin="anonymous"></script>
+
+<!-- Shoelace UI alert installation -->
+<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/components/alert/alert.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css">
+</head>
+
+<body>
+<!-- Nav bar -->
+  <section id="home"> <!-- Nav bar is put in one section with home page -->
+  <nav class="nav">
+    <div class="logo">
+    <a href="#home"> 
+      <img class="circular-square" width="70" src="images/dog-logo.png" alt="logo">
+    </a>
+   </div>
+
+      <div class="nav-hamburger"> <!-- Hamburger menu shows for responsive ui -->
+      <span class="nav-hamburger-line"></span>
+      <span class="nav-hamburger-line"></span>
+      <span class="nav-hamburger-line"></span>
+      </div>
+      
+    <div class="nav-menu">
+      <ul>
+        <li class="nav-links"><a href="#about">About</a></li>
+        <li class="nav-links"><a href="#issue">Issue</a></li>
+        <li class="nav-links"><a href="#adopt">Adopt</a></li>
+        <li class="nav-links"><a href="#donate">Donate</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--Home page-->
+      <h1>A HOME FOR<br>EVERY PAW</h1> <!-- br tag -->
+        <div class="title-desc">Educating today, rescuing tomorrow,<br>adopting for life.</div>
+        <a href="/index.html#donate" id="donateButton">Donate</a> <!-- home page donate button will link to donate page -->
+       <div id="arrow-container1"> <!-- arrows scroll automatically to the next section -->
+          <a href="#about">
+          <i class="fa-solid fa-chevron-down" id="arrow-main"></i> 
+          </a>  
+        </div>
+      </section>
+
+   <!--About page-->
+    <section id="about">
+        <div id="blue-rectangle"> <!-- for the background colour and acts as a double container -->
+            <div class="container-about">
+            <h2>About Us</h2>
+            <div class="about-desc">
+              A Home For Every Paw is an awareness campaign that raises the issues of cruelty towards companion dogs and supports adoption of rescue dogs. We aim to educate people about adopting and encourage supporting animal welfare organisations.
+            </div>
+              <div class="dog-eye">
+                <img class="circular-square" src="images/dog-eye.png" alt="dog-eye" id="animateEye"> <!-- circular square makes all images a circle with the same class -->
+              </div>
+                <div id="arrow-container2"> <!--Scroll to next page-->
+                  <a href="#issue">
+                  <i class="fa-solid fa-chevron-down" id="arrow1"></i> 
+                  </a>  
+                </div>
+             </div>
+         </div>
+     </section>
+
+
+  <!--Issue page-->
+    <section id="issue">
+        <div class="container-issue-support">
+          <h3>What is the issue?</h3>
+          <div class="issue-desc">Its a failed system... and change starts with us.</div>
+
+          <div class="subsection-container"> <!--Issue and Support sections both have the same container to reduce repetition in css-->
+               <div id="subsection1">   <!--Same for subsection ids-->
+                <div class="subtitle-section2">Neglect and abuse</div>
+                <div class="para-section2">Total of 56,969 cruelty compaints of dogs were investigated in 2023-2024 in Australia.</div>
+                <div class="issue-images">
+                <img class="circular-square" width=180 src="images/dog-neglect.png" alt="Dog Neglect">
+                 </div>
+                </div>
+
+               <div id="subsection2">
+                <div class="subtitle-section2">Unethical dog farms</div>
+                <div class="para-section2">Dog farms have unethical conditions for the dogs that are overcrowded and starving.</div>
+                <div class="issue-images">
+                <img class="circular-square" width=180 src="images/dog-unethical.png" alt="Dog Unethical">
+                 </div>
+                 </div>
+
+                 <div id="subsection3">
+                    <div class="subtitle-section2">Over-flooding shelters</div>
+                    <div class="para-section2">Many dogs are killed in council pounds every year and aren't given a chance to find a loving home.</div>
+                    <div class="issue-images">
+                    <img class="circular-square" width=180 src="images/dog-shelter.png" alt="Dog Shelter">
+                    </div>
+                 </div>
+
+                 <div id="subsection4">
+                  <div class="subtitle-section2">Euthanasia Practices</div>
+                  <div class="para-section2">Euthanasia of impounded pets but only kill them but also risk the mental health of vet staff. </div>
+                 <div class="issue-images">
+                  <img class="circular-square" width=180 src="images/dog-euthanasia.png" alt="Dog Euthanasia">
+                  </div>
+                </div>
+              </div>
+              <div id="arrow-container6"> <!--Scrolls down on click-->
+                <a href="#support">
+                <i class="fa-solid fa-chevron-down" id="arrow2"></i> 
+                </a>  
+              </div>
+          </div>
+   </section>
+
+ <!--Why Support page-->
+ <section id="support">
+   <div class="container-issue-support"> <!--Same container as issue section-->
+    <h4>Why Support?</h4>
+    <div class="support-desc">
+      By raising awareness and encouraging adoption it reduces animal cruelty.
+    </div>
+
+      <div class="subsection-container">
+        <div id="support-subsection1" class="subsection">
+          <div class="subtitle-support counter" data-target="17000">0</div>
+          <div class="para-support">Received into shelters</div>
+          <div class="support-icons">
+            <i class="fa-solid fa-house" style="color: #ffead0;"></i>
+          </div>
+        </div>
+      
+        <div id="support-subsection2" class="subsection">
+          <div class="subtitle-support">
+            <span class="counter" data-target="7">0</span><span class="symbol">%</span>
+          </div>
+          <div class="para-support">Dogs decrease in shelters</div>
+          <div class="support-icons">
+            <i class="fa-solid fa-plus" style="color: #ffead0;"></i>
+          </div>
+        </div>
+      
+        <div id="support-subsection3" class="subsection">
+          <div class="subtitle-support counter" data-target="7000">0</div>
+          <div class="para-support">Adopted</div>
+          <div class="support-icons">
+            <i class="fa-solid fa-heart" style="color: #ffebd0;"></i>
+          </div>
+        </div>
+      </div>
+        
+    </div>
+    <div id="arrow-container3">
+      <a href="#adopt" id="arrow">
+      <i class="fa-solid fa-chevron-down" id="arrow3"></i> 
+      </a>  
+    </div>
+  </section>
+   
+    <!--Benefits Page-->
+    <section id="adopt">  <!--Benefits page will be in the same page as Adopt Now page-->
+      <div id="carousel-border">
+          <h2 class="title3">Benefits of ADOPTING</h2>
+          <div id="product-carousel">  <!--Will be able to scroll horizontally-->
+              <div class="benefits-card1"> <img  src="images/benefits-card1.png" alt="Benefits Card 1">
+              </div>
+              <div class="benefits-card2"> <img src="images/benefits-card2.png" alt="Benefits Card 2">
+                 
+              </div>
+              <div class="benefits-card3"><img  src="images/benefits-card3.png" alt="Benefits Card 3">
+              
+              </div>
+              <div class="benefits-card4"><img  src="images/benefits-card4.png" alt="Benefits Card 4">
+                  
+              </div>
+              <div class="benefits-card5"><img  src="images/benefits-card5.png" alt="Benefits Card 5"> 
+             </div>
+            </div>
+        </div>
+        <div id="arrow-container4">
+          <a href="#adopt-now" id="scroll-arrow">
+          <i class="fa-solid fa-chevron-down" id="arrow4"></i> 
+          </a> 
+        </div>
+      </section>
+
+<!--Adopt Now Page-->
+<section class="gallery-section" id="adopt-now">
+  <div class="container">
+    <div class="section-header">
+      <h6 class="section-title">Adopt Now</h6>
+      <div class="section-desc">Browse to see loving videos of our adoption dogs.</div>
+    </div>
+    <sl-select id="dog-filter" class="short-select" placeholder="Quick Select"> <!--Shoelace UI selection is used to conveniently select and browse the adoption dogs-->
+      <sl-option value="all">Show All</sl-option> <!--Show All option is added so users aren't stuck to one option when selecting-->
+      <sl-option value="maya">Maya</sl-option>
+      <sl-option value="daisy">Daisy</sl-option>
+      <sl-option value="ben">Ben</sl-option>
+      <sl-option value="bella">Bella</sl-option>
+      <sl-option value="biscuit">Biscuit</sl-option>
+      <sl-option value="hannah">Hannah</sl-option>
+    </sl-select>
+
+    <div class="gallery-layout"> <!--Utilises Zoomora's Gallery Installation-->
+      <div class="gallery-item" data-dog="maya"> <!--data-dog is used to link each option with Shoelace selection-->
+        <img src="images/dog1.png" alt="Maya"    
+             data-src="videos/dog-video2.mp4" 
+             data-type="video"
+             data-caption="Just 10 weeks old, Maya had been rescued from abondonment and is now awaiting a loving family."
+             data-zoomora="main-gallery"
+             loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-label">Maya</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-dog="daisy"> <!--Has mp4 video when clicking on the image-->
+        <img src="images/dog2.png" alt="Dog 2 with video"
+             data-src="videos/dog-video1.mp4"
+             data-type="video"
+             data-caption="Daisy is a sweet dog ready for adoption into a new home!"
+             data-zoomora="main-gallery"
+             loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-label">Daisy</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-dog="ben">
+        <img src="images/dog3.png" alt="Dog 3"
+             data-src="images/dog3.png"
+             data-caption="Ben is an energetic and bubbly 1 year old dog filled with joy."
+             data-zoomora="main-gallery"
+             loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-label">Ben</span>
+        </div>
+      </div>
+      <div class="gallery-item" data-dog="bella">
+        <img src="images/dog4.png" alt="Dog 4 with video"
+             data-src="videos/dog-video4.mp4"
+             data-type="video"
+             data-caption="You'll instantly fall in love with Bella, as she brings calmness and peace into lives."
+             data-zoomora="main-gallery"
+             loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-label">Bella</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-dog="biscuit">
+        <img src="images/dog5.png" alt="Dog 5"
+             data-src="images/dog5.png"
+             data-caption="Biscuit is a bundle of joy, ready to face any challenges to come."
+             data-zoomora="main-gallery"
+             loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-label">Biscuit</span>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-dog="hannah">
+        <img src="images/dog6.png" alt="Dog 6"
+             data-src="images/dog6.png"
+             data-caption="If you're looking for a cute and cuddly companion like Hannah, why not adopt her."
+             data-zoomora="main-gallery"
+             loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-label">Hannah</span>
+        </div>
+      </div>
+    </div>
+    </div>
+  
+    <div id="arrow-container5">
+      <a href="#donate">
+      <i class="fa-solid fa-chevron-down" id="arrow5"></i> 
+      </a> 
+    </div>
+     </section>
+
+ <!--Donate Page-->
+<section id="donate">
+  <div class="container-donate">
+  
+      <h6 class="h7">Donate</h6>
+      <div class="donate-desc">
+        Every $35 SAVES a dog, donate to our partnered organisation to make a difference.
+      </div>
+        <div class="donate-image">
+          <img class="circular-square" width=180 src="images/pet-rescue.png" alt="Pet Rescue"> 
+          <svg id="pulse-svg" viewBox="0 0 100 100" width="120" height="120"> <!--SVG animation of circle is added underneath the pet rescue logo for aesthetic purposes-->
+            <circle id="pulse-circle" cx="50" cy="50" r="20" fill="white" />
+          </svg>
+        </div>
+         
+          <div class="animation-button alert-toast"> <!--Combined two shoelace uis together rubber band animation and alert when clicking on the button-->
+            <sl-animation name="rubberBand" duration="1000" iterations="1">
+              <sl-button variant="primary" size="large" pill >Donate</sl-button>
+              <sl-alert variant="primary" duration="3000" closable>
+                <sl-icon slot="icon" name="info-circle"></sl-icon>
+                <strong>External link!</strong><br>
+                This button will take you to Pet Rescue.
+              </sl-alert> 
+            </sl-animation>
+         </div>
+      
+     
+<!--Footer-->
+<div id="footer-rectangle"> 
+  <div id="footer-container"> <!--Ensures the content fits nicely at the bottom without extra margin or being too close to the bottom-->
+  <div class="logo-footer">
+      <img class="circular-square" width="100" src="images/dog-logo.png" alt="logo">
+      <p>A Home For<br>Every Paw</p>
+  </div>
+    
+  <div id="socials">   
+ <i class="fa-brands fa-instagram" id="instagram"></i>
+ <i class="fa-brands fa-facebook" id="facebook"></i>
+ <i class="fa-brands fa-tiktok" id="tiktok"></i>
+  </div>
+ </div>
+  <div class="footer-words">This website has been created as part of an assignment in an approved course of study for Curtin
+      University and contains copyright material not created by the author. All copyright material used
+      remains copyright of the respective owners and has been used here pursuant to Section 40 of the
+      Copyright Act 1968 (Commonwealth of Australia). No part of this work may be reproduced without
+      consent of the original copyright owners. See code comments for references.</div>
+  </div>
+ </div>
+ </section>
+
+    <!--GSAP installation for JS-->
+    <script src="gsap.min.js"></script>
+    <script src="SplitText.min.js"></script>
+    <script src="ScrollTrigger.min.js"></script>
+
+   <!--Shoelace UI installation for JS-->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/components/alert/alert.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script>
+
+    <!--Zoomora installation for JS-->
+    <script src="https://cdn.jsdelivr.net/npm/zoomora/dist/zoomora.umd.min.js"></script>
+
+   <!--is deferred for nav bar JS to work-->
+  <script src="main.js" defer></script>
+</body>
+</html>
+
+

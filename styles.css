@@ -1,0 +1,1162 @@
+/* ===== Main Html and Body Styling ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* prevent padding from widening boxes unexpectedly */
+}
+
+html, body {
+  margin: 0; /* when using all 0 for layout it resets it and doesn't bug the component layouts */
+  padding: 0;
+  overflow-x: hidden; /* removes right-side scrolling */
+  width: 100%;
+  scroll-behavior: smooth; /* makes scrolling smooth without jumping */
+}
+
+body {
+  font-family: Helvetica;  /* main font styling throughout the body */
+  line-height: 1.5em;
+  background-color:#BBCDE3;
+  font-size: 20px;
+}
+
+
+/* ===== Home Page Styling ===== */
+
+#home {
+  position: relative; /* it stays in normal document flow */
+  width: 100%;
+  height: 100vh; /* full screen */
+  background: url('images/dog-homepage1.png') center/cover no-repeat;
+  z-index: 0; 
+  overflow: hidden;
+  background-attachment: fixed; /*parallax feeling when scrolling */
+} 
+
+
+h1 {
+  position: absolute; /*will stay fixed and not move unlike postion: relative*/
+  font-family:Myanmar, serif; /*heading font different from body styling*/
+  color: #FFEBD0;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /* (x,y) of screen*/
+  font-size: clamp(40px, 8vw, 80px);  /* responsive without overflow and without the need of media queries */
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.4); /*makes a shadow around the text for better readability */
+  z-index: -5; /*moves the text back so it is behind the nav bar*/
+}
+
+.title-desc {
+  position: absolute;
+  color: #fff;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  font-size: clamp(16px, 2.5vw, 28px);
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+  z-index: -1; /*z-index layers the elements */
+}
+
+#donateButton {
+  position: absolute; 
+  text-decoration: none; /* removes any underline from href link in html  */
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  padding: 12px 50px; /* stylizes the background width and height of the button  */
+  border: none;
+  border-radius: 40px; /* rounds the button more */
+  cursor: pointer; 
+  outline: none; 
+  font-family: Myanmar, sans-serif;
+  font-size: clamp(16px, 2vw, 18px);
+  transition: 0.3s ease; /* hover animation activated from below*/
+}
+
+#donateButton:hover {
+  transition: ease 0.5s ;
+  background-color: #FFEBD0; /*changes colour on hover*/
+}
+
+
+#arrow-container1 { /*container groups all elements within it */
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  width:100px;
+  height: 100px;
+  margin: 0 auto;
+  background-color:transparent;
+  border-radius: 20px;
+  text-align: center;
+}
+
+#arrow-main {
+  font-size: 50px; 
+  color: #ffffff; 
+  animation: dip 0.7s ease-in-out alternate infinite; /*animated for feedback so users can just see without hovering */       
+}
+
+@keyframes dip{/*animation moves up and down on infinite*/
+  from{
+      transform: translateY(0%);
+  }
+  to{
+      transform: translateY(30%);
+  } 
+} 
+
+
+
+/* ===== Nav Bar Styling ===== */
+.nav { /*main nav positioning and spacing */
+  top: 0;
+  left: 0;
+  width: 100%;  
+  height: 3.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff; 
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+}
+
+
+.logo { /*logo is in the same container as nav */
+  align-self: flex-start; 
+  margin-top: 20px;
+  margin: 1rem;
+}
+
+.circular-square{
+  border-radius: 50%;/*image turns to a circle by adjusting the border*/
+  align-items: center;
+}
+
+.nav-menu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-menu ul li { /*removes default bullet points from list*/
+  list-style: none;
+}
+
+.nav-menu ul li a { /*stylizes the nav bar*/
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+  display: block;
+}
+
+.nav-menu li:hover {
+  inset: 0; /* means top:0; left:0; right:0; bottom:0 */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.nav-hamburger{ /*positioning of hamburger menu*/
+  width: 1.875rem;
+  height: 1.313rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.nav-hamburger-line { /*creates the three lines for a hamburger menu*/
+  height: 0.188rem;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  transition: all ease-in-out 0.2s;
+}
+
+
+/* ==========About Page Styling============= */
+#about {   
+  height: 100vh; /*sizes to full screen*/
+  width: 100vw;
+}
+
+
+#blue-rectangle{    /*used as a background and border guideline of the pages*/
+  background-color: #BBCDE3; /*background color*/
+}
+
+.container-about{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;  /*fixed max-width creates slight border from full width*/
+  margin: 0 auto; /*centers elements*/
+  padding: 35px;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+  z-index: 0;
+  
+}
+
+h2{
+  position: relative; /*stays in the normal layout*/
+  top: 8rem;   /*makes the element go up*/
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: clamp(40px, 8vw, 80px);  /*clamp helps with sizing down naturally*/
+  color: #fff;
+  font-family: Myanmar, serif;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+  margin: 0;
+}
+.about-desc{
+  font-size: 120%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /*keeps it centred */
+  max-width: 400px; /*limits how wide the element gets */
+  width: 80%;      
+}
+
+.dog-eye{
+  display: flex; /*utilised for a responsive design and helps with adjusting when sized down */
+  height: auto;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: -1;
+}
+.dog-eye img{
+  height: 50%;
+  display: flex;
+  max-width: 700px; 
+  width: clamp(400px, 45vw, 600px);
+}
+
+
+#arrow-container2 { /* arrow stylized to desired positon*/
+  position: relative;          /*positioned under the circle */
+  margin-top: 30px;            /*the distance below image */
+  left: 50%;
+  transform: translateX(-50%); /*centers the arrow*/
+  background-color: transparent;
+  border-radius: 20px;
+  text-align: center;
+}
+
+#arrow1 {
+  font-size: 50px; 
+  color: #ffffff; 
+  animation: dip 0.7s ease-in-out alternate infinite; /*animated for feedback so users can just see without hovering */       
+}
+
+@keyframes dip{/*animation moves up and down on infinite*/
+  from{
+      transform: translateY(0%);
+  }
+  to{
+      transform: translateY(30%);
+  } 
+} 
+
+
+
+/* ==========Issue Page Styling============= */
+#issue {   
+  width: 100vw; /*ensures full screen */
+  min-height: 100vh; 
+  position: relative;
+  background: url('images/issue-background.png') center/cover no-repeat;
+  z-index: 0;
+  overflow: visible; 
+  background-attachment: fixed; /*parallax feeling when scrolling */
+}
+
+
+.container-issue-support{ /*container is used for both issue and support page is put which ever is first on the page */
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 35px;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+  z-index: 0;
+  
+}
+
+#issue .container-issue-support {
+  padding-top: 8rem; /* spacing before h3 appears */
+}
+
+h3{
+  position: relative;   /*issue page title positioning */
+  margin-top: 8rem;            
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: clamp(40px, 8vw, 80px);
+  color: #fff;
+  font-family: Myanmar, serif;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+  margin-bottom: 1rem;     
+  margin: 10px;
+}
+.issue-desc{
+  position: relative;
+  text-align: center;
+  font-size: 26px;
+  max-width: 70%;
+  width: 70%;
+  color: #fff;
+  line-height: 1.4em;
+  margin: 2rem auto 4rem;  
+}
+
+
+.subsection-container{  /*again both issue and support page will utilise for positioning */
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.para-section2 { /* same for here too for positioning */
+   display: flex;
+  font-size: clamp(12px, 2.2vw, 15px);
+  line-height:1.35; 
+  margin:0;
+  padding-top: 40px; 
+  transform: translateY(11px);
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+  max-width: 16ch;      /*keeps lines shorter to force positioning*/
+  margin-inline:auto;
+  z-index: 1;
+}
+
+.issue-images {
+  position: relative;   /*keeps images responsive*/          
+  display: flex;                  
+  justify-content: center;        
+  align-items: center;            
+  filter: brightness(0.8); /*0.5 = 50% of brightness from original image*/
+  width: clamp(50px, 20vw, 150px);
+  height: clamp(50px, 20vw, 150px); 
+  margin: 0 auto;     /*centres the elements*/                       
+  background-position: center;
+  z-index: -1;                      
+  color: #fff;
+  text-align: center;
+  padding: 0;
+  pointer-events: none;
+  transform: translateY(-120px);
+}
+
+
+#subsection1,
+#subsection2,
+#subsection3, 
+#subsection4{
+  position: relative;
+  flex: 1 1 260px;    /*lets them responsive e.g.shrink/grow */
+  max-width: 200px;   /* limits from stretching too wide */
+  min-width: 250px;
+  height: auto;
+  display: flex;
+  flex-direction: column;  /*stack all text vertically */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: transparent;
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+
+.subtitle-section2{
+    font-family: "Shippori Mincho";
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+#arrow-container6 { 
+  position: relative;          
+  margin-top: -30px;            
+  left: 50%;
+  transform: translateX(-50%); /*centers horizontally */
+  background-color: transparent;
+  border-radius: 20px;
+  text-align: center;
+}
+
+#arrow2 {
+  font-size: 50px; 
+  color: #ffffff; 
+  animation: dip 0.7s ease-in-out alternate infinite; /*animated for feedback so users can just see without hovering */       
+}
+
+@keyframes dip{/*animation moves up and down on infinite*/
+  from{
+      transform: translateY(0%);
+  }
+  to{
+      transform: translateY(30%);
+  } 
+} 
+
+/* ==========Support Page Styling============= */
+#support{
+  width: 100vw;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 1.5rem;  /*padding of the viewport */
+  box-sizing: border-box;
+  background: transparent;
+  overflow: hidden;
+  flex-direction: column;
+ 
+}
+
+h4{
+  position: relative;     
+  margin-top: 4rem;               
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: clamp(40px, 8vw, 80px);
+  color: #000000;
+  font-family: Myanmar, serif;
+}
+
+.support-desc{
+  position: relative;   
+  text-align: center;
+  font-size: 26px;
+  max-width: 600px;
+  width: 80%;
+  color: #FFEBD0;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+  line-height: 1.4;
+  margin: 3rem auto 4rem;  
+}
+
+#support-subsection1,
+#support-subsection2,
+#support-subsection3 {
+  position: relative;
+  flex: 1 1 260px;    /*lets them responsive e.g.shrink/grow */
+  max-width: 200px;   /* limits from stretching too wide */
+  min-width: 250px;
+  height: auto;
+  display: flex;
+  flex-direction: column;  /*stack all text vertically */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: transparent;
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+.para-support{
+  display: flex;             
+  justify-content: center; 
+  color: #000000;
+  font-size: 20px;
+  margin-bottom: 60px;
+  flex-wrap: wrap; 
+}
+
+.subtitle-support{
+  color:black;
+  font-size: 50px;
+  margin-bottom: 30px;
+  flex-wrap: wrap; 
+  gap: 2rem;
+}
+
+
+.support-icons {
+  position: relative;              
+  display: flex;                
+  justify-content: center;       
+  align-items: center;         
+  font-size: 80px;
+  margin: 0 auto; /*centres*/
+  background-position: center;
+  z-index: -1;  /* keep above background but below text */
+  color: #000000;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+  text-align: center;
+  padding: 0;
+  pointer-events: none;
+  animation: pulse 2.5s ease-in-out infinite; /* animation activates*/
+}
+
+@keyframes pulse { /* pulse animation will activate on the icons automatically */
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px rgba(255, 234, 208, 0.3)); /* slight change of colour for more visibility */
+  }
+  50% {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 20px rgba(255, 234, 208, 0.8));
+  }
+  100% {
+    transform: scale(1);
+    
+  }
+}
+
+
+#arrow-container3 { 
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0 auto; 
+  z-index: 10;
+  transform: translateY(-130px); /*moves arrow up to desired positioning */
+  
+}
+
+#arrow3 {
+  font-size: 50px; 
+  color: #ffffff; 
+  animation: dip 0.7s ease-in-out alternate infinite; /*animated for feedback so users can just see without hovering */       
+}
+
+@keyframes dip{/*animation moves up and down on infinite*/
+  from{
+      transform: translateY(0%);
+  }
+  to{
+      transform: translateY(30%);
+  } 
+} 
+
+
+/* ==========Benefits Page Styling============= */
+
+#adopt{
+  position: relative;
+  width: 100%;   /*prevents a sideways nudge */
+  height: 100vh;       
+  overflow: visible; /*so elements will be visible even when responsive */
+}
+
+
+#adopt::before{
+  content:"";
+  position:absolute; inset:0;
+  background: url('images/dog-benefits.png') center/cover no-repeat;
+  z-index: -1;   /* ensures that background is only behind #adopt content so it doesn't effect other sections */
+  pointer-events: none;  /*so it doesn't block clicks */
+}
+
+#adopt > *{ /*keeps the content over the background */
+  position: relative;
+  z-index: 1;
+}
+
+
+#carousel-border{    /*used as a background and border guideline of the pages*/
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 40px;
+  background-color: transparent;
+  
+}
+
+
+.title3{  /*title of the benefits page*/
+  position: absolute;
+  top: 20%;      /* center vertically */
+  left: 50%;      /* center horizontally */
+  transform: translate(-50%, -50%); /* shift back by half its size */
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  font-size: clamp(40px, 8vw, 90px);
+  font-family: Myanmar;
+  color: #ffffff;
+}
+
+
+#product-carousel {
+  display:flex;
+  flex-direction: row;/*all images are placed in a row */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;/*will be able to scroll smoothly */
+  gap: 70px;
+  padding:45px;
+}
+
+.benefits-card1,
+.benefits-card2, 
+.benefits-card3,
+.benefits-card4,
+.benefits-card5{
+  flex: 0 0 auto;/*applies to all images that is listed */
+  display:flex; 
+  align-items: center;
+  justify-content: center;
+  margin-top: 190px;
+  border-radius: 40px;
+  text-align: center;
+  position:relative;
+}
+
+.benefits-card1 img,
+.benefits-card2 img, 
+.benefits-card3 img,
+.benefits-card4 img,
+.benefits-card5 img{
+  
+  width: clamp(200px, 25vw, 350px);  /*card width scales with viewport to make it responsive */
+  border-radius: 40px;
+  transition: ease 0.5s;
+  
+}
+
+#arrow-container4 { 
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0 auto;           
+  margin-bottom: 20%;   /*moves the arrow lower */
+  transform: none;  
+  transform: translateY(-50px); /*moves 50px upward */ 
+  z-index: 10;
+}
+
+#arrow4 {
+  font-size: 50px; 
+  color: #ffffff; 
+  animation: dip 0.7s ease-in-out alternate infinite; /*animated for feedback so users can just see without hovering */       
+}
+
+@keyframes dip{/*animation moves up and down on infinite*/
+  from{
+      transform: translateY(0%);
+  }
+  to{
+      transform: translateY(30%);
+  } 
+} 
+
+/* ==========Adopt Now Page Styling============= */
+
+#adopt-now {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 4rem;  /* spacing on top for inline height*/
+  padding-bottom: 2rem;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+h6 {
+  font-size: clamp(40px, 8vw, 80px);
+  color: black;
+  font-family: Myanmar, serif;
+  margin: 0 0 1rem 0;          /* bottom spacing only */
+  position: static;            /* remove manual positioning */
+}
+
+
+.section-desc {
+  text-align: center;
+  font-size: clamp(18px, 2vw, 24px);
+  color: black;
+  line-height: 1.4;
+  margin-top: clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: 2rem;  /*adds a bottom gap before dropdown*/
+  position: static;   /*it lets flexbox handle it */
+}
+
+
+.short-select { /* Shoelace ui dropdown */
+  width: clamp(180px, 20vw, 400px);
+  font-size: clamp(14px, 2vw, 18px);
+  margin-bottom: 3rem;  /*space before gallery */
+}
+
+
+
+/* Gallery Section */
+.gallery-section {
+  padding: 100px 20px;
+  background: var(--color-dark);
+  justify-content: center;
+  z-index: 0;
+}
+.gallery-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Gallery borders of components */
+  gap: 25px;
+  margin-top: 60px;   
+}
+.gallery-item {  /*Items inside the gallery*/
+  position: relative;
+  border-radius: 20px;
+  transform-origin: center;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.gallery-item:hover { /*The item is enlarged on hover*/
+  transform: translateY(-8px) scale(1.02);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.gallery-item:hover img {/*The img is enlarged on hover*/
+  transform: scale(1.1);
+}
+.gallery-overlay {  /*the overlay ensures zoomora layout works*/
+  position: absolute; 
+  inset: 0;
+  background: linear-gradient(to top, rgba(var(--color-dark-rgb), 0.8), transparent);
+  display: flex;
+  align-items: flex-end;
+  padding: 25px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+.gallery-label {
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  font-size: 2.1rem;
+}
+
+.gallery-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#arrow-container5 { /*arrow scrolls down to donate page*/
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border-radius: 20px;
+  text-align: center;
+  margin: 0 auto;           
+  margin-top: 5%;     
+  transform: none;     
+  z-index: 10;
+}
+
+#arrow5 {
+  font-size: 50px; 
+  color: #ffffff; 
+  animation: dip 0.7s ease-in-out alternate infinite; /*animated for feedback so users can just see without hovering */       
+}
+
+@keyframes dip{/*animation moves up and down on infinite*/
+  from{
+      transform: translateY(0%);
+  }
+  to{
+      transform: translateY(30%);
+  } 
+} 
+
+/* ==========Donate Page Styling============= */
+#donate {   /*sizes to full screen on about us page */
+  width: 100vw;
+  height: 100%;
+  position: relative;
+  background: url('images/issue-background.png') center/cover no-repeat;
+  z-index: 0;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.container-donate{
+  height: 150vh; 
+  position: relative; 
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 35px;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+  z-index: 0;
+}
+
+.h7{/*the title for donate page */
+  position: relative;      
+  margin-top: 8%;               
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: clamp(40px, 8vw, 80px);
+  color: #fff;
+  font-family: Myanmar, serif;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+  margin-bottom: 1rem;     
+  margin-top: 80px;
+}
+.donate-desc{
+  position: relative; /*keeps it in flow*/
+  text-align: center;
+  font-size: clamp(16px, 2vw, 26px);
+  max-width: 550px;
+  width: 80%;
+  color: #fff;
+  line-height: 2rem; 
+  margin: 4rem auto 4rem;   
+}
+
+.animation-button{
+  text-align: center;
+  margin-top: 10vh;
+  z-index: 3;
+}
+
+
+sl-button { /*shoelace ui button positioning*/
+  font-size: 1.8rem;
+  position: relative; 
+  bottom: 20%;   
+  justify-content: center;
+  width: 200px;
+  padding: 20px 30px;
+}
+
+sl-button::part(base) { /*shoelace ui button stylizing*/
+  background-color: #ffffff; /*not parse error on css validator, because it is just the shoelace ui css style*/
+  color: #000;
+  border: none; 
+}
+
+
+sl-button::part(base):hover  { /*shoelace ui button stylizing on hover*/
+  transition: color 0.5s ease;/*not parse error on css validator, because it is just the shoelace ui css style*/
+  background-color: #FFEBD0;
+  color: #000000;
+}
+
+.donate-image {
+  position: relative;
+  display: inline-block;
+}
+
+.donate-image img {
+  position: relative; /*keeps it above the SVG by default */
+  z-index: 2;      /*layers with the SVG to be on top of it */
+  display: block;
+  width: 180px;
+  height: auto;
+  border-radius: 40%; /* optional */
+}
+
+#pulse-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(4.2);
+  pointer-events: none;
+  z-index: 1;     /*lower z-index for SVG to stay behind the donate image */
+}
+
+
+/* ==========FOOTER STYLIING============= */
+#footer-rectangle {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  margin-top: 300px; /*pushes the footer container down*/
+  margin-bottom: -20px;
+}
+
+#socials {
+  position: relative;
+  margin-top: -50px;
+  font-size: 130%;
+  display: flex;
+  flex-direction: row;  /*positions the icons in a row horizontally*/
+  justify-content: right;
+  text-align: center;
+  gap: 40px;
+}
+
+.logo-footer{ /*logo on the footer*/
+  display: flex;
+  justify-content: left;
+  text-align: center;
+  gap: 40px;
+}
+
+
+.footer-words{ /*title of website*/
+  position: relative;
+  margin-top: 85px;
+  font-size: clamp(12px, 2vw, 18px);
+}
+
+
+
+
+/* ===== Nav Bar Media Queries ===== */
+
+@media screen and (max-width: 600px) {
+
+  h1 {
+    font-size: clamp(36px, 8vw, 60px);
+  }
+
+  .nav-hamburger {  
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: rgba(72, 67, 67, 0.8);
+    top: -30rem;
+    width: 100%;
+    transition: all ease-in-out 0.4s;
+    padding: 3rem 0 0.6rem;
+    }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 3rem 0 0.6rem; /*targeted space between each link when responive*/
+  }
+
+  .nav-menu ul li {     
+    text-align: center;
+  }
+
+  .nav-menu {
+    z-index: -1; /*makes sure menu is hidden when sized down for the hamburger menu to appear*/
+  }
+
+  .nav-menu.active {
+    top: 0;
+  }
+
+  .nav-hamburger.active :nth-child(1) {
+    transform: rotate(45deg) translate(0.45rem, 0.1875rem);
+  }
+
+  .nav-hamburger.active :nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-hamburger.active :nth-child(3) {
+    transform: rotate(-45deg) translate(0.45rem, -0.1875rem);
+  }
+
+}
+
+
+/* ==========About Page Media Queries============= */
+
+@media (min-width: 1200px) {  /*breaking points where elements clash are adjusted*/
+  .dog-eye h2 { font-size: 80px; 
+  }   /* upper bound */
+
+}
+@media (max-width: 1000px) {
+  .dog-eye h2 { font-size: 20px; }  
+
+  .about-desc{
+    font-size: 15px;
+    max-width: 300px; 
+    top: 55%;  
+  }
+}
+
+@media (max-width: 800px) {
+  #about{
+    font-size: 120%;
+  }
+}
+
+
+
+
+/* ==========Issue Page Media Queries============= */
+
+@media (max-width: 1200px) {
+  h3 {
+    margin-top: 40px; 
+  }
+ 
+  .issue-desc{
+    font-size: 15px;
+  }
+ 
+
+
+  #subsection2-container {
+    justify-content: center;
+    margin-top: -75px;   /* ⬅️ moves the whole section up */
+  }
+
+  #subsection1,
+  #subsection2,
+  #subsection3,
+  #subsection4 {
+    flex: 1 1 45%;      /* two per row */
+    max-width: 45%;
+  }
+
+  .subtitle-section2{
+    font-family: Myanmar;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+  .issue-images {
+ 
+    transform: translateY(-110px);
+    padding:0%;
+    margin: 0 auto;  
+    margin-top: -9px;   
+  }
+
+  .subtitle-section2 {
+    font-size: 28px;
+  }
+}
+
+
+
+@media (max-width: 950px) {
+
+
+  /* Container positioning */
+  #subsection2-container {
+    justify-content: center;
+    margin-top: -60px;   /* slightly less upward offset */
+    gap: 25px;
+  }
+
+  /* Two-per-row layout */
+  #subsection1,
+  #subsection2,
+  #subsection3,
+  #subsection4 {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+
+  /* Subtitles above the circles */
+  .subtitle-section2 {
+    font-family: Myanmar;
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  /* Circular images shrink proportionally */
+  .issue-images {
+    width: clamp(20px, 19vw, 170px);
+    height: clamp(20px, 14vw, 170px);
+    padding: 0;
+    margin: 0 auto;
+    margin-top: -8%;
+   
+  }
+  
+}
+
+@media (max-width: 900px) {
+.issue-images {
+    
+  margin-top: 2%;
+ 
+}}
+@media (max-width: 850px) {
+  .issue-images {
+    
+    margin-top: 4%;
+   
+  }
+}
+
+@media (max-width: 600px) {
+  .issue-images {
+    
+    margin-top: 20px;
+   
+  }
+}
+
+
+/* ==========Support Page Media Queries ============ */
+
+@media (max-width: 1200px) {
+  #arrow-container3 {
+    transform: translateY(-20px); 
+  }
+}
+
+
+/* ==========Adopt Now Page Media Queries============= */
+
+@media (max-width: 1000px) {
+  h6 {/*the title for adopt now page */
+    top: -50px;  
+  }
+  
+  .section-desc {
+
+    top: -15px;    
+ 
+  }
+    
+}
